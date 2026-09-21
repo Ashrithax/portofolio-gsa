@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NI PUTU AYU DIAN SULASTRI - Portofolio</title>
+  <meta name="description" content="Portofolio mahasiswa: profil, prestasi, kegiatan, pemakaian Gemini, dan rencana kegiatan kampus.">
+  <meta name="theme-color" content="#0E1533">
+
+  <!-- Tampilan saat link dibagikan (WhatsApp, LinkedIn, dll). Judul dan deskripsi diisi otomatis dari js/data.js -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NI PUTU AYU DIAN SULASTRI - Portofolio">
+  <meta property="og:description" content="Profil, prestasi, dan kegiatan.">
+  <meta property="og:locale" content="id_ID">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%232848D0%22/%3E%3Ctext x=%2250%22 y=%2268%22 font-size=%2258%22 font-family=%22sans-serif%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22%3EN%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#konten">Lompat ke konten</a>
+  <noscript><p class="noscript">Website ini membutuhkan JavaScript untuk menampilkan isinya.</p></noscript>
+
+  <div class="layout">
+
+    <!-- ===== PANEL PROFIL (kiri) ===== -->
+    <aside class="profile" aria-label="Profil">
+      <button class="icon-btn theme-toggle" id="themeBtn" type="button" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <!-- FOTO PROFIL: js/data.js -> photo (images/profil.jpg) -->
+      <div class="photo" id="photo"></div>
+
+      <h1 id="name"></h1>
+      <p class="role" id="role"></p>
+      <p class="meta-line" id="campus"></p>
+      <p class="meta-line" id="place"></p>
+
+      <div class="icons" id="icons" aria-label="Kontak dan media sosial"></div>
+
+      <div class="profile-foot">
+        <a class="btn btn-highlight" id="cvBtn" href="#" hidden>Unduh CV</a>
+      </div>
+    </aside>
+
+    <!-- ===== KONTEN (kanan) ===== -->
+    <div class="main">
+      <div class="main-inner">
+
+        <header class="hero" id="hero">
+          <h2 class="hero-title" id="headline"></h2>
+          <p class="hero-text" id="tagline"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#prestasi">Lihat prestasi</a>
+            <a class="btn btn-ghost" href="#kontak">Hubungi saya</a>
+          </div>
+        </header>
+
+        <nav class="tabs" aria-label="Navigasi bagian">
+          <a href="#tentang">Tentang</a>
+          <a href="#pengalaman">Pengalaman</a>
+          <a href="#prestasi">Prestasi</a>
+          <a href="#kegiatan">Kegiatan</a>
+          <a href="#gemini">Gemini</a>
+          <a href="#konten-ai">Konten</a>
+          <a href="#rencana">Rencana</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+
+        <main id="konten">
+
+          <section class="block" id="tentang">
+            <h2>Tentang saya</h2>
+            <div class="prose" id="about"></div>
+            <h3 class="sub" id="skillsTitle">Keahlian</h3>
+            <dl class="skills" id="skills"></dl>
+          </section>
+
+          <section class="block" id="pengalaman">
+            <h2>Pengalaman dan organisasi</h2>
+            <ol class="timeline" id="timeline"></ol>
+          </section>
+
+          <!-- FOTO PRESTASI: js/data.js -> achievements (images/prestasi-1.jpg, dst.) -->
+          <section class="block" id="prestasi">
+            <h2>Prestasi dan penghargaan</h2>
+            <p class="lead">Klik foto untuk melihat detail dan bukti.</p>
+            <div class="filters" id="filters" role="group" aria-label="Filter kategori prestasi"></div>
+            <div class="gallery" id="gallery"></div>
+          </section>
+
+          <!-- FOTO KEGIATAN: js/data.js -> moments (images/kegiatan-1.jpg, dst.) -->
+          <section class="block" id="kegiatan">
+            <h2>Dokumentasi kegiatan</h2>
+            <p class="lead" id="momentsLead"></p>
+            <div class="moments" id="moments"></div>
+          </section>
+
+          <section class="block" id="gemini">
+            <h2>Cara saya memakai Gemini</h2>
+            <p class="lead" id="geminiLead"></p>
+            <ul class="uses" id="uses"></ul>
+          </section>
+
+          <section class="block" id="konten-ai">
+            <h2>Konten dan komunitas</h2>
+            <p class="lead" id="postsLead"></p>
+            <ul class="posts" id="posts"></ul>
+          </section>
+
+          <section class="block" id="rencana">
+            <h2>Rencana kegiatan di kampus</h2>
+            <p class="lead" id="planLead"></p>
+            <ol class="timeline" id="plan"></ol>
+          </section>
+
+          <section class="block" id="kontak">
+            <h2>Mari berkolaborasi</h2>
+            <p class="lead" id="contactLead"></p>
+            <a class="mail" id="mailLink" href="#"></a>
+            <div class="socials" id="socials">
+              <button class="btn btn-primary" id="copyMail" type="button" aria-live="polite">Salin email</button>
+            </div>
+          </section>
+
+        </main>
+
+        <footer id="footer"></footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Jendela detail foto ===== -->
+  <dialog id="lightbox" aria-label="Detail foto">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Tutup">&times;</button>
+    <div class="lb-media" id="lbMedia"></div>
+    <div class="lb-info">
+      <h3 id="lbTitle"></h3>
+      <p class="meta" id="lbMeta"></p>
+      <p class="desc" id="lbDesc"></p>
+      <a class="btn btn-ghost" id="lbLink" href="#" target="_blank" rel="noopener noreferrer" hidden>Lihat bukti</a>
+    </div>
+    <div class="lb-bar">
+      <button class="btn btn-ghost" id="lbPrev" type="button">Sebelumnya</button>
+      <button class="btn btn-ghost" id="lbNext" type="button">Berikutnya</button>
+    </div>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
